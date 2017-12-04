@@ -16,12 +16,12 @@ import govirtual360.otpreaderview.Reciver.OtpReaderBroadcast;
 
 public class MainActivity extends AppCompatActivity implements OTPListener {
     private static final int MY_PERMISSIONS_REQUEST_READ_SMS=100;
-    TextView otp;
+    OtpView otp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        otp=(TextView)findViewById(R.id.otp_view);
+        otp=(OtpView)findViewById(R.id.otp_view);
         if(ContextCompat.checkSelfPermission(this,
                 Manifest.permission.READ_SMS)
                 != PackageManager.PERMISSION_GRANTED){
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements OTPListener {
     public void otpReceive(String message) {
         Toast.makeText(this,"Got "+message, Toast.LENGTH_LONG).show();
         Log.d("Otp",message);
-      otp.setText(message);
+      otp.setOTP(message);
     }
 
     @Override
