@@ -40,7 +40,11 @@ public class MainActivity extends AppCompatActivity implements OTPListener {
     public void otpReceive(String message) {
         Toast.makeText(this,"Got "+message, Toast.LENGTH_LONG).show();
         Log.d("Otp",message);
-      otp.setOTP(message);
+       String regex = "[^\\d]+";
+       String[] str = message.split(regex);
+        System.out.println(str[1]);
+           // settext(otptext);
+        otp.setOTP(str[1]);
     }
 
     @Override
