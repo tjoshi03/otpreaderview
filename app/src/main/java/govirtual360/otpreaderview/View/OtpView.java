@@ -80,10 +80,10 @@ public class OtpView extends LinearLayout {
             Log.e("OTPView","OTP doesn't match INPUT TYPE");
             return;
         }
-        mOtpOneField.setText(otp.charAt(0));
-        mOtpTwoField.setText(otp.charAt(1));
-        mOtpThreeField.setText(otp.charAt(2));
-        mOtpFourField.setText(otp.charAt(3));
+        mOtpOneField.setText(String.valuof(otp.charAt(0)));
+        mOtpTwoField.setText(String.valuof(otp.charAt(1)));
+        mOtpThreeField.setText(String.valuof(otp.charAt(2)));
+        mOtpFourField.setText(String.valuof(otp.charAt(3)));
     }
 
     private void styleEditTexts(TypedArray styles) {
